@@ -11,42 +11,12 @@ os.system('clear')
 
 intents = Intents.all()
 intents.members = True
-bot = commands.Bot(command_prefix="-", owner_id=716707479005823036, intents=intents)
+bot = commands.Bot(command_prefix="-", owner_id=716707479005823036, intents=intents) # change owner id 
 token = '' # PUT YOUR BOT TOKEN HERE
 
 @bot.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
-  
-@bot.event
-async def on_message(message):
-    if message.author == bot.user:
-        return
-    elif message.author == message.author:
-      channel = bot.get_channel(989610111632805999)
-      chn = message.channel
-      nwor = ['nig','n1g','wigg']
-      kys = ['kys', 'kill yourself']
-      mean = ['bitch', 'fag', 'stfu', 'shut the']
-      nameo = message.author
-      mess = message.content
-      mes = mess.lower()
-      emb = Embed(
-        description = f'{nameo}: {mes}'
-      )
-      emb.set_footer(text=f'{chn} ({message.channel.id})')
-      await channel.send(embed=emb)
-      fluf = await bot.fetch_user('716707479005823036')
-      if fluf is not None:
-             if fluf.dm_channel is None:
-                 await fluf.create_dm()
-             if any(word in mes for word in nwor):
-                 emb.title = "🔴 N-Word 🔴"
-                 await DMChannel.send(fluf, embed=emb)
-             elif any(word in mes for word in kys):
-                 emb.title = "🔴 Someone said kys! 🔴"
-                 await DMChannel.send(fluf, embed=emb)
-
 
 
 @tasks.loop(seconds=40)
