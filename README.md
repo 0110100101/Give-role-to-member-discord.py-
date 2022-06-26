@@ -6,3 +6,5 @@ keep alive creates a web server which can be used to keep the bot alive
 
 ### main py
 most of the code in is there , the code after @tasks_loop is the one which checks status, gives roles 
+
+> i have mentioned in hastags what to do 
